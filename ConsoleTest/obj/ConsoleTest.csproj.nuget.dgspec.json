@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\clson\\code\\WT\\ConsoleTest\\ConsoleTest.csproj": {}
+    "C:\\Users\\clson\\git_project\\ConsoleTest\\ConsoleTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\clson\\code\\WT\\ConsoleTest\\ConsoleTest.csproj": {
+    "C:\\Users\\clson\\git_project\\ConsoleTest\\ConsoleTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\clson\\code\\WT\\ConsoleTest\\ConsoleTest.csproj",
+        "projectUniqueName": "C:\\Users\\clson\\git_project\\ConsoleTest\\ConsoleTest.csproj",
         "projectName": "ConsoleTest",
-        "projectPath": "C:\\Users\\clson\\code\\WT\\ConsoleTest\\ConsoleTest.csproj",
+        "projectPath": "C:\\Users\\clson\\git_project\\ConsoleTest\\ConsoleTest.csproj",
         "packagesPath": "C:\\Users\\clson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\clson\\code\\WT\\ConsoleTest\\obj\\",
+        "outputPath": "C:\\Users\\clson\\git_project\\ConsoleTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\clson\\AppData\\Roaming\\NuGet\\NuGet.Config",
