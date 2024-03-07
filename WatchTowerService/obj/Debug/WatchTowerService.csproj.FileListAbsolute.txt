@@ -1,0 +1,7 @@
+C:\Users\clson\code\WT\WatchTowerService\obj\Debug\WatchTowerService.csproj.AssemblyReference.cache
+C:\Users\clson\code\WT\WatchTowerService\obj\Debug\WatchTowerService.csproj.CoreCompileInputs.cache
+C:\Users\clson\code\WT\WatchTowerService\bin\Debug\WatchTowerService.exe.config
+C:\Users\clson\code\WT\WatchTowerService\bin\Debug\WatchTowerService.exe
+C:\Users\clson\code\WT\WatchTowerService\bin\Debug\WatchTowerService.pdb
+C:\Users\clson\code\WT\WatchTowerService\obj\Debug\WatchTowerService.exe
+C:\Users\clson\code\WT\WatchTowerService\obj\Debug\WatchTowerService.pdb
