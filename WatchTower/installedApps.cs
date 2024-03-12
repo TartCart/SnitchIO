@@ -52,8 +52,7 @@ public class InstalledApps
     private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
     {
         // Get the list of currently installed applications and convert it to set for comparison with default set
-        RegistryKey uninstallKeys = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall");
-        HashSet<String> installedApps = new HashSet<string>(uninstallKeys.GetSubKeyNames());
+        HashSet<String> installedApps = new HashSet<string>(uninstallKey.GetSubKeyNames());
         // Check for new installed apps
         foreach (string appKey in installedApps)
         {
