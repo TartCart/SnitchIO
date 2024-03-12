@@ -45,9 +45,8 @@ public class CMDMonitor
                 string targetSubjectAccountName = eventRecord.Properties[10]?.Value.ToString(); //the account that the command is targeting
 
                 // Check the event log properties for regular system usage/not cmd.exe and filter those out
-
-                
-                if (!parentProcessName.Contains("cmd.exe"))
+                string[] excludeList = {"conhost.exe","wsl.exe", "dotnet.exe"};
+                if (!parentProcessName.Contains("cmd.exe") || excludeList.Any(process => newProcessName.Contains(process)))
                 {
                     return;
                 }

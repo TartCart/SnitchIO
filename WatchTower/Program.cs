@@ -4,10 +4,16 @@ using System.Runtime.InteropServices;
 using System.ServiceProcess;
 using System.Threading;
 
+
+// Must be ran as admin
+
+
+
 namespace WatchTower
 {
     static class Program
     {
+        // Create this directory for testing, will have the installer create it separately
         private static string logFilePath = @"C:\ProgramData\WatchTower\logfile.txt";
 
         static void Main()
@@ -49,7 +55,7 @@ namespace WatchTower
     {
         private PSMonitor psEventLogMonitor;
         private RDPMonitor rdpEventLogMonitor;
-        private installedApps InstalledAppsMonitor;
+        private InstalledApps InstalledAppsMonitor;
         private CMDMonitor cmdMonitor;
 
 
@@ -57,7 +63,7 @@ namespace WatchTower
         {
             psEventLogMonitor = new PSMonitor();
             rdpEventLogMonitor = new RDPMonitor();
-            InstalledAppsMonitor = new installedApps();
+            InstalledAppsMonitor = new InstalledApps();
             cmdMonitor = new CMDMonitor();
 
         }
@@ -74,11 +80,21 @@ namespace WatchTower
 
         protected override void OnStop()
         {
-            Program.LogMessage("Service stopped.");
+            Program.LogMessage("Service stopped not from shutdown.");
             psEventLogMonitor.StopMonitoring();
             rdpEventLogMonitor.StopMonitoring();
             InstalledAppsMonitor.StopMonitoring();
             cmdMonitor.StopMonitoring();
         }
+
+        protected override void OnShutdown() 
+        {
+            Program.LogMessage("Service stopped due to shutdown.");
+            psEventLogMonitor.StopMonitoring();
+            rdpEventLogMonitor.StopMonitoring();
+            InstalledAppsMonitor.StopMonitoring();
+            cmdMonitor.StopMonitoring();
+        }
+
     }
 }

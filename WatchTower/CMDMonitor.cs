@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Diagnostics.Eventing.Reader;
-using System.Dynamic;
+using System.Threading;
 using System.Security.Principal;
 using System.Net;
 using System.Net.Sockets;
 using WatchTower;
+using System.Linq;
+
+// Below must be ran in CMD as admin and will be handled by the installer. must be enabled for testing
+// auditpol / set / subcategory:"Process Creation" / success:enable
 
 public class CMDMonitor
 {
@@ -18,6 +22,8 @@ public class CMDMonitor
 
     public void StartMonitoring()
     {
+        Program.LogMessage("CMD Monitoring started.");
+        Thread.Sleep(10000);
         try
         {
             // Define the query to retrieve events with Event ID 4688 from Windows security log
@@ -46,13 +52,11 @@ public class CMDMonitor
                 string targetSubjectAccountName = eventRecord.Properties[10]?.Value.ToString(); //the account that the command is targeting
 
                 // Check the event log properties for regular system usage/not cmd.exe and filter those out
-
-
-                if (!parentProcessName.Contains("cmd.exe"))
+                string[] excludeList = { "conhost.exe", "wsl.exe" };
+                if (!parentProcessName.Contains("cmd.exe") || excludeList.Any(process => newProcessName.Contains(process)))
                 {
                     return;
                 }
-
 
                 // Resolve SID, filter if it was created by SYSTEM
                 string accountName;
@@ -108,7 +112,6 @@ public class CMDMonitor
 
             // Start listening for events and logging ******** Needs to be written out to log file************
             watcher.Enabled = true;
-            Program.LogMessage("CMD Monitoring started.");
         }
         catch (Exception ex)
         {

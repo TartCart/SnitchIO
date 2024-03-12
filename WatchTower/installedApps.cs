@@ -6,21 +6,24 @@ using System.Net;
 using System.Net.Sockets;
 using WatchTower;
 
-public class installedApps
+public class InstalledApps
 {
-    private static RegistryKey uninstallKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall");
+    private static RegistryKey uninstallKey;
+
     private System.Timers.Timer timer;
     private EmailSender emailSender;
-
-    // Set up the preinstalled apps by name as a reference to newly installed apps
-    private string[] preInstalledApps = uninstallKey.GetSubKeyNames();
 
     //set for comparing already installed apps to newly added apps 
     private HashSet<String> preInstalledAppsByName;
 
+    // Set up the preinstalled apps by name as a reference to newly installed apps
+    private string[] preInstalledApps;
+
     //Constructor 
-    public installedApps()
+    public InstalledApps()
     {
+        uninstallKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall");
+        preInstalledApps = uninstallKey.GetSubKeyNames();
         emailSender = new EmailSender();
     }
 
@@ -49,8 +52,8 @@ public class installedApps
     private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
     {
         // Get the list of currently installed applications and convert it to set for comparison with default set
-        HashSet<String> installedApps = new HashSet<string>(uninstallKey.GetSubKeyNames());
-
+        RegistryKey uninstallKeys = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall");
+        HashSet<String> installedApps = new HashSet<string>(uninstallKeys.GetSubKeyNames());
         // Check for new installed apps
         foreach (string appKey in installedApps)
         {
@@ -58,7 +61,9 @@ public class installedApps
             if (key != null)
             {
                 string appName = key.GetValue("DisplayName") as string;
-                if (appName != null)
+                if (appName != null && appKey.ToString() != "AddressBook")
+                    // Program.LogMessage("checking");
+                    // Program.LogMessage(appKey);
                 {
                     // Check if the app is newly installed
                     if (!IsAppAlreadyNotified(appName))
@@ -81,11 +86,12 @@ public class installedApps
                                             $"Installed Software: {appName}\n" +
                                             $"Publisher: {publisher}\n" +
                                             $"Installed Location: {installLocation}\n" +
-                                            $"Install Source: {installSource}\n";
+                                            $"Install Source: {installSource}\n" +
+                                            $"Data found: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{appKey}";
 
 
                         // Send email ******** RECIPIENT EMAIL NEEDS TO BE READ IN FROM THE CONFIG FILE  ***********
-                        Program.LogMessage("New Software Detected: Sending Alert email.");
+                        Program.LogMessage($"New Software Detected: Sending Alert email.{appName}");
                         emailSender.SendEmail("evollutiion@gmail.com", "Installed Software Event Notification", emailBody);
 
                         // Mark the app as notified
@@ -114,6 +120,7 @@ public class installedApps
             }
         }
         return appNames;
+       
     }
 
     // Compare the app in the newly aquired set to see if it is in the old set (indicating a program has been installed)
