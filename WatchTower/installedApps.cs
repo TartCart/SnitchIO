@@ -15,10 +15,10 @@ public class InstalledApps
     
     // Declare comparison sets/arrays as fields for all the methods to access
     private HashSet<String> ogInstalledAppsSet = new HashSet<string>();
-    string[] newInstalledAppsArray;
-    string[] ogInstalledAppsArray;
-    RegistryKey newUninstallKey;
-    RegistryKey ogUninstallKey;
+    private string[] newInstalledAppsArray;
+    private string[] ogInstalledAppsArray;
+    private RegistryKey newUninstallKey;
+    private RegistryKey ogUninstallKey;
 
     // Constructor 
     public InstalledApps()
