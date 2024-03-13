@@ -30,7 +30,7 @@ public class InstalledApps
     {
         // Set up timer to check for new installed apps periodically
         // timer = new System.Timers.Timer(120000); // Check every 2 min
-        timer = new System.Timers.Timer(10000); // Check every 10 sec for testing
+        timer = new System.Timers.Timer(20000); // Check every 20 sec for testing
         timer.Elapsed += Timer_Elapsed;
         timer.Start();
     }
@@ -50,116 +50,109 @@ public class InstalledApps
 
     private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
     {
-        try
+        // Have to generate a fresh set here, need access to both the key and the app name for comparison and recording in this method
+        using (newUninstallKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
         {
-            // Have to generate a fresh set here, need access to both the key and the app name for comparison and recording in this method
-            newUninstallKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall");
-            newInstalledAppsArray = newUninstallKey.GetSubKeyNames();
-            Program.LogMessage("checking");
-
-        }
-        catch (Exception ex)
-        {
-            Program.LogMessage($"Error retrieving new master uninstall key for installed apps: {ex.Message}");
-        }
-
-        foreach (string appKey in newInstalledAppsArray)
-        {
-            RegistryKey key = newUninstallKey.OpenSubKey(appKey);
-
-            if (key != null)
+            try
             {
-                string appName = key.GetValue("DisplayName") as string;
-                if (appName != null && appKey.ToString() != "AddressBook")                {
-                    // Check if the app is newly installed
-                    if (!IsAppAlreadyNotified(appName))
+                newInstalledAppsArray = newUninstallKey.GetSubKeyNames();
+                Program.LogMessage("checking");
+                string numApps = newInstalledAppsArray.Length.ToString();
+                Program.LogMessage(numApps);
+
+            }
+            catch (Exception ex)
+            {
+                Program.LogMessage($"Error retrieving new master uninstall key for installed apps: {ex.Message}");
+            }
+
+            foreach (string appKey in newInstalledAppsArray)
+            {
+                RegistryKey key = newUninstallKey.OpenSubKey(appKey);
+
+                if (key != null)
+                {
+                    string appName = key.GetValue("DisplayName") as string;
+                    if (appName != null && appKey.ToString() != "AddressBook")
                     {
-                        // Populate email variables 
-                        string installDate = key.GetValue("InstallDate") as string;
-                        string installSource = key.GetValue("InstallSource") as string;
-                        string installLocation = key.GetValue("InstallLocation") as string;
-                        string publisher = key.GetValue("Publisher") as string;
-                        // get machine info
-                        string localHostname = Dns.GetHostName();
-                        IPAddress[] addresses = Dns.GetHostAddresses(localHostname);
-                        string ipv4Addresses = string.Join(", ", addresses.Where(a => a.AddressFamily == AddressFamily.InterNetwork));
-
-                        // Send email notification
-                        string emailBody = $"System local time: {DateTime.Now.ToString("h:mm:ss tt")}\n" +
-                                            $"Local Computer Hostname: {localHostname}\n" +
-                                            $"Local Computer IP(s): {ipv4Addresses}\n" +
-                                            "\n--Below data may be unavailable for some applications--\n" +
-                                            $"Installed Software: {appName}\n" +
-                                            $"Publisher: {publisher}\n" +
-                                            $"Installed Location: {installLocation}\n" +
-                                            $"Install Source: {installSource}\n" +
-                                            $"Data found: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{appKey}";
-
-
-                        // Send email ******** RECIPIENT EMAIL NEEDS TO BE READ IN FROM THE CONFIG FILE  ***********
-                        Program.LogMessage($"New Software Detected: Sending Alert email.{appName}{key}{appKey} app");
-                        emailSender.SendEmail("evollutiion@gmail.com", "Installed Software Event Notification", emailBody);
-
-                        // Mark the app as notified aka ensure it doesnt alert on the same app
-                        MarkAppAsNotified(appName);
-                        // Close the registry key when done accessing
-                        try
+                        // Check if the app is newly installed
+                        if (!IsAppAlreadyNotified(appName))
                         {
-                            newUninstallKey.Close();
-                        }
-                        catch (Exception ex)
-                        {
-                            Program.LogMessage($"Error closing new uninstall key: {ex.Message}");
+                            // Populate email variables 
+                            string installDate = key.GetValue("InstallDate") as string;
+                            string installSource = key.GetValue("InstallSource") as string;
+                            string installLocation = key.GetValue("InstallLocation") as string;
+                            string publisher = key.GetValue("Publisher") as string;
+                            // get machine info
+                            string localHostname = Dns.GetHostName();
+                            IPAddress[] addresses = Dns.GetHostAddresses(localHostname);
+                            string ipv4Addresses = string.Join(", ", addresses.Where(a => a.AddressFamily == AddressFamily.InterNetwork));
+
+                            // Send email notification
+                            string emailBody = $"System local time: {DateTime.Now.ToString("h:mm:ss tt")}\n" +
+                                                $"Local Computer Hostname: {localHostname}\n" +
+                                                $"Local Computer IP(s): {ipv4Addresses}\n" +
+                                                "\n--Below data may be unavailable for some applications--\n" +
+                                                $"Installed Software: {appName}\n" +
+                                                $"Publisher: {publisher}\n" +
+                                                $"Installed Location: {installLocation}\n" +
+                                                $"Install Source: {installSource}\n" +
+                                                $"Data found: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{appKey}";
+
+
+                            // Send email ******** RECIPIENT EMAIL NEEDS TO BE READ IN FROM THE CONFIG FILE  ***********
+                            Program.LogMessage($"New Software Detected: Sending Alert email.{appName}{key}{appKey} app");
+                            emailSender.SendEmail("evollutiion@gmail.com", "Installed Software Event Notification", emailBody);
+
+                            // Mark the app as notified aka ensure it doesnt alert on the same app
+                            MarkAppAsNotified(appName);
+                            // Close the registry key when done accessing
+
                         }
                     }
                 }
             }
         }
+        
     }
 
     // Create the set from the already installed apps
     private HashSet<String> CleanAppList()
     {
-
-        try
+        using (ogUninstallKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
         {
-            // Have to generate another set, need access to both the key and the app name for comparison and recording in this method
-            ogUninstallKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall");
-            ogInstalledAppsArray = ogUninstallKey.GetSubKeyNames();
-        }
-        catch (Exception ex)
-        {
-            Program.LogMessage($"Error retrieving og master uninstall key for installed apps: {ex.Message}");
-        }
 
-        // Set to store the the actual applications name
-        HashSet<string> appNames = new HashSet<string>();
 
-        // appKey is the individual subkey name of the folder in the Uninstall directory
-        foreach (string appKey in ogInstalledAppsArray)
-        {
-            RegistryKey key = ogUninstallKey.OpenSubKey(appKey);
-            if (key != null && key.ToString() != "AddressBook")
+            try
             {
-                string appName = key.GetValue("DisplayName") as string;
-                if (appName != null)
+                // Have to generate another set, need access to both the key and the app name for comparison and recording in this method
+                ogInstalledAppsArray = ogUninstallKey.GetSubKeyNames();
+                string numApps = ogInstalledAppsArray.Length.ToString();
+                Program.LogMessage(numApps);
+            }
+            catch (Exception ex)
+            {
+                Program.LogMessage($"Error retrieving og master uninstall key for installed apps: {ex.Message}");
+            }
+
+            // Set to store the the actual applications name
+            HashSet<string> appNames = new HashSet<string>();
+
+            // appKey is the individual subkey name of the folder in the Uninstall directory
+            foreach (string appKey in ogInstalledAppsArray)
+            {
+                RegistryKey key = ogUninstallKey.OpenSubKey(appKey);
+                if (key != null && key.ToString() != "AddressBook")
                 {
-                    appNames.Add(appName);
+                    string appName = key.GetValue("DisplayName") as string;
+                    if (appName != null)
+                    {
+                        appNames.Add(appName);
+                    }
                 }
             }
+            return appNames;
         }
-        // Close the registry key when done accessing
-        try
-        {
-            ogUninstallKey.Close();
-        }
-        catch (Exception ex)
-        {
-            Program.LogMessage($"Error closing og uninstall key: {ex.Message}");
-        }
-
-        return appNames;
-       
     }
 
     // Compare the app in the newly aquired set to see if it is in the old set (indicating a program has been installed)
