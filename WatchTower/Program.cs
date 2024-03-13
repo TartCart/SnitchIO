@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.ServiceProcess;
@@ -20,7 +21,12 @@ namespace WatchTower
         {
             // Initialize log file
             InitializeLogFile();
-
+            if (Debugger.IsAttached)
+            {
+                var service = new MonitorService();
+                service.Start();
+                Thread.Sleep(10000000);
+            }
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
@@ -70,12 +76,17 @@ namespace WatchTower
 
         protected override void OnStart(string[] args)
         {
+            Start();
+
+        }
+
+        public void Start()
+        {
             Program.LogMessage("WatchTower service started.");
             psEventLogMonitor.StartMonitoring();
             rdpEventLogMonitor.StartMonitoring();
             InstalledAppsMonitor.StartMonitoring();
             cmdMonitor.StartMonitoring();
-
         }
 
         protected override void OnStop()

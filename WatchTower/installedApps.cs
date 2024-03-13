@@ -15,10 +15,6 @@ public class InstalledApps
     
     // Declare comparison sets/arrays as fields for all the methods to access
     private HashSet<String> ogInstalledAppsSet = new HashSet<string>();
-    private string[] newInstalledAppsArray;
-    private string[] ogInstalledAppsArray;
-    private RegistryKey newUninstallKey;
-    private RegistryKey ogUninstallKey;
 
     // Constructor 
     public InstalledApps()
@@ -37,7 +33,7 @@ public class InstalledApps
 
     public void StartMonitoring()
     {
-        ogInstalledAppsSet = CleanAppList();
+        CleanAppList();
         SetupTimer();
         Program.LogMessage("Installed Apps Monitoring started.");
     }
@@ -50,9 +46,17 @@ public class InstalledApps
 
     private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
     {
+        checkBaseKey(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64));
+        checkBaseKey(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32));
+    }
+
+    private void checkBaseKey(RegistryKey localMachine)
+    {
+        
         // Have to generate a fresh set here, need access to both the key and the app name for comparison and recording in this method
-        using (newUninstallKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
+        using (var newUninstallKey = localMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
         {
+            string[] newInstalledAppsArray = new string[0];
             try
             {
                 newInstalledAppsArray = newUninstallKey.GetSubKeyNames();
@@ -113,15 +117,21 @@ public class InstalledApps
                 }
             }
         }
-        
     }
 
     // Create the set from the already installed apps
-    private HashSet<String> CleanAppList()
+    private void CleanAppList()
     {
-        using (ogUninstallKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
-        {
+        ogInstalledAppsSet.Clear();
+        loadInitialApps(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64));
+        loadInitialApps(RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32));
+    }
 
+    private void loadInitialApps(RegistryKey localMachine)
+    {
+        using (var ogUninstallKey = localMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
+        {
+            string[] ogInstalledAppsArray = new string[0];
 
             try
             {
@@ -135,9 +145,7 @@ public class InstalledApps
                 Program.LogMessage($"Error retrieving og master uninstall key for installed apps: {ex.Message}");
             }
 
-            // Set to store the the actual applications name
-            HashSet<string> appNames = new HashSet<string>();
-
+            
             // appKey is the individual subkey name of the folder in the Uninstall directory
             foreach (string appKey in ogInstalledAppsArray)
             {
@@ -147,11 +155,10 @@ public class InstalledApps
                     string appName = key.GetValue("DisplayName") as string;
                     if (appName != null)
                     {
-                        appNames.Add(appName);
+                        ogInstalledAppsSet.Add(appName);
                     }
                 }
             }
-            return appNames;
         }
     }
 
