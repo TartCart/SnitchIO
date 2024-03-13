@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\clson\\git_project\\WatchTower\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\git_project\\WatchTower\\installedapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|c:\\users\\clson\\git_project\\watchtower\\installedapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:installedapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|c:\\users\\clson\\git_project\\watchtower\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\git_project\\WatchTower\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\git_project\\WatchTower\\cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\git_project\\WatchTower\\psmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:psmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\git_project\\WatchTower\\cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\git_project\\WatchTower\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,15 +62,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "PSMonitor.cs",
               "DocumentMoniker": "C:\\Users\\clson\\git_project\\WatchTower\\PSMonitor.cs",
               "RelativeDocumentMoniker": "PSMonitor.cs",
               "ToolTip": "C:\\Users\\clson\\git_project\\WatchTower\\PSMonitor.cs",
               "RelativeToolTip": "PSMonitor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAACBAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAYAAACBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T21:40:27.531Z"
+              "WhenOpened": "2024-03-07T21:40:27.531Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -86,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CMDMonitor.cs",
               "DocumentMoniker": "C:\\Users\\clson\\git_project\\WatchTower\\CMDMonitor.cs",
               "RelativeDocumentMoniker": "CMDMonitor.cs",
@@ -104,7 +105,7 @@
               "RelativeDocumentMoniker": "installedApps.cs",
               "ToolTip": "C:\\Users\\clson\\git_project\\WatchTower\\installedApps.cs",
               "RelativeToolTip": "installedApps.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwDYAAABaAAAA",
+              "ViewState": "AQIAAI4AAAAAAAAAAAAQwLAAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-07T21:36:37.127Z",
               "EditorCaption": ""
@@ -129,7 +130,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\clson\\git_project\\WatchTower\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAcAAAAXAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-07T21:33:12.429Z",
               "EditorCaption": ""

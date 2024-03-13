@@ -70,7 +70,7 @@ namespace WatchTower
 
         protected override void OnStart(string[] args)
         {
-            Program.LogMessage("Service started.");
+            Program.LogMessage("WatchTower service started.");
             psEventLogMonitor.StartMonitoring();
             rdpEventLogMonitor.StartMonitoring();
             InstalledAppsMonitor.StartMonitoring();
@@ -80,7 +80,7 @@ namespace WatchTower
 
         protected override void OnStop()
         {
-            Program.LogMessage("Service stopped not from shutdown.");
+            Program.LogMessage("WatchTower service stopped not from shutdown.");
             psEventLogMonitor.StopMonitoring();
             rdpEventLogMonitor.StopMonitoring();
             InstalledAppsMonitor.StopMonitoring();
@@ -89,7 +89,7 @@ namespace WatchTower
 
         protected override void OnShutdown() 
         {
-            Program.LogMessage("Service stopped due to shutdown.");
+            Program.LogMessage("WatchTower service stopped due to shutdown.");
             psEventLogMonitor.StopMonitoring();
             rdpEventLogMonitor.StopMonitoring();
             InstalledAppsMonitor.StopMonitoring();
