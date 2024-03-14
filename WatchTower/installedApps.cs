@@ -60,10 +60,7 @@ public class InstalledApps
             try
             {
                 newInstalledAppsArray = newUninstallKey.GetSubKeyNames();
-                Program.LogMessage("checking");
                 string numApps = newInstalledAppsArray.Length.ToString();
-                Program.LogMessage(numApps);
-
             }
             catch (Exception ex)
             {

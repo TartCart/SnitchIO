@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.Eventing.Reader;
 using System.Dynamic;
+using System.Linq;
 using System.Security.Principal;
 using WatchTower;
 
@@ -69,8 +70,9 @@ public class PSMonitor
                     accountName = securityUserID;
                 }
 
+                string[] excludeList = { "Set-StrictMode", "$Host", "Set-Alias"};
                 // Check if ScriptBlockText is "prompt" or an error, if so, skip processing because its useless events and unnecessary
-                if (scriptBlockText.Trim() == "prompt" || scriptBlockText.Contains("Set-StrictMode"))
+                if (scriptBlockText.Trim() == "prompt" || excludeList.Any(process => scriptBlockText.Contains(process)))
                 {
                     return;
                 }
