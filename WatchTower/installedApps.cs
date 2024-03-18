@@ -107,7 +107,6 @@ public class InstalledApps
 
                             // Mark the app as notified aka ensure it doesnt alert on the same app
                             MarkAppAsNotified(appName);
-                            // Close the registry key when done accessing
 
                         }
                     }
@@ -135,7 +134,6 @@ public class InstalledApps
                 // Have to generate another set, need access to both the key and the app name for comparison and recording in this method
                 ogInstalledAppsArray = ogUninstallKey.GetSubKeyNames();
                 string numApps = ogInstalledAppsArray.Length.ToString();
-                Program.LogMessage(numApps);
             }
             catch (Exception ex)
             {

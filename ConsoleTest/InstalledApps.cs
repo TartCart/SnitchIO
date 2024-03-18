@@ -24,7 +24,7 @@ public class InstalledApps
     {
         // Set up timer to check for new installed apps periodically
         //timer = new System.Timers.Timer(120000); // Check every 2 min
-        timer = new System.Timers.Timer(10000); // Check every 10 sec for testing
+        timer = new System.Timers.Timer(20000); // Check every 10 sec for testing
         timer.Elapsed += Timer_Elapsed;
         timer.Start();
     }
@@ -81,8 +81,8 @@ public class InstalledApps
 
 
                         // Send email ******** RECIPIENT EMAIL NEEDS TO BE READ IN FROM THE CONFIG FILE  ***********
-                        emailSender.SendEmail("evollutiion@gmail.com", "Installed Software Event Notification", emailBody);
-
+                        //emailSender.SendEmail("evollutiion@gmail.com", "Installed Software Event Notification", emailBody);
+                        Console.WriteLine($"{appName} was installed");
                         // Mark the app as notified
                         MarkAppAsNotified(appName);
                     }    
