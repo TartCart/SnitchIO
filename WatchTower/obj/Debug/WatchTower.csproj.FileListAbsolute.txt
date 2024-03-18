@@ -5,3 +5,10 @@ C:\Users\clson\git_project\WatchTower\obj\Debug\WatchTower.csproj.AssemblyRefere
 C:\Users\clson\git_project\WatchTower\obj\Debug\WatchTower.csproj.CoreCompileInputs.cache
 C:\Users\clson\git_project\WatchTower\obj\Debug\WatchTower.exe
 C:\Users\clson\git_project\WatchTower\obj\Debug\WatchTower.pdb
+C:\Users\clson\projects\wt\WatchTower\bin\Debug\WatchTower.exe.config
+C:\Users\clson\projects\wt\WatchTower\bin\Debug\WatchTower.exe
+C:\Users\clson\projects\wt\WatchTower\bin\Debug\WatchTower.pdb
+C:\Users\clson\projects\wt\WatchTower\obj\Debug\WatchTower.csproj.AssemblyReference.cache
+C:\Users\clson\projects\wt\WatchTower\obj\Debug\WatchTower.csproj.CoreCompileInputs.cache
+C:\Users\clson\projects\wt\WatchTower\obj\Debug\WatchTower.exe
+C:\Users\clson\projects\wt\WatchTower\obj\Debug\WatchTower.pdb

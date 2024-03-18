@@ -1,0 +1,89 @@
+.install-content
+{
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: #2B2B2B;
+  color: #ccc;
+  text-align: center;
+}
+
+#email-list 
+{
+    width: 300px;
+    height: 30px;
+    margin-top: 30px;
+}
+
+
+#uninstall-btn:hover, #submit-btn:hover, #install-btn:hover{
+    background-color: #ccc;
+    color: #000000;
+    transition: color .4s ease;
+}
+
+
+#uninstall-btn{
+    width: 120px;
+    height: 35px;
+    border: 2px solid #000000;
+    background-color: #777985;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 30px;
+}
+
+#submit-btn{
+    width: 120px;
+    height: 35px;
+    border: 2px solid #000000;
+    background-color: #777985;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    font-weight: bold;
+    font-size: large;
+    margin-left: 165px;
+}
+
+#install-btn{
+    width: 120px;
+    height: 35px;
+    border: 2px solid #000000;
+    background-color: #777985;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 60px;
+}
+
+.button-contain {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 285px;
+}
+
+#install-status {
+    margin-top: 50px;
+    margin-right:145px;
+}
+
+#uninstall-status {
+    margin-top: 25px;
+    margin-right: 125px;
+}
+
+#submit-status {
+    margin-right: 40px;
+}

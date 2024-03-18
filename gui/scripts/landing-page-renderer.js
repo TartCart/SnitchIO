@@ -22,7 +22,7 @@
           configureButton.classList.remove('active');
           monitorButton.classList.remove('active');
 
-            mainContent.innerHTML = '<h1>Welcome to WatchTower</h1><p>This program installs a service on Windows machines to monitor processes and applications to alert system administrators via email of potential threat actor activity.</p><h2>Monitoring and Alerting Functionality</h2><ul><li>Powershell</li><li>Command prompt (CMD.exe)</li><li>Remote Desktop Protocol (RDP)</li><li>Application Installation</li></ul><h3>Prerequisites</h3><ul><li>Windows Server 2012 R2 and greater</li><li>windows 8.1/RT 8.1 and greater</li></ul>';      
+          $('#main-content').load('content/home.html');        
         });
       
 
@@ -36,7 +36,7 @@
           
           
           // Update main content
-          mainContent.innerHTML = '<p>Install content goes here.</p>';
+          $('#main-content').load('content/install.html');
       });
 
       configureButton.addEventListener('click', () => {
@@ -48,7 +48,7 @@
           
           
           // Update main content
-          mainContent.innerHTML = '<p>Configure content goes here.</p>';
+          $('#main-content').load('content/configure.html');
       });
 
       monitorButton.addEventListener('click', () => {
@@ -60,5 +60,5 @@
           
           
           // Update main content
-          mainContent.innerHTML = '<p>Monitor content goes here.</p>';
+          $('#main-content').load('content/monitor.html');
       });

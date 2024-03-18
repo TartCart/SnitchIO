@@ -21,6 +21,7 @@
     "electron": "^29.1.4"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "fs-extra": "^11.2.0"
   }
 }
