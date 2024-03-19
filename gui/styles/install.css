@@ -47,7 +47,7 @@
     transition: background-color 0.4s ease;
     font-weight: bold;
     font-size: large;
-    margin-left: 165px;
+    margin-left: 115px;
 }
 
 #install-btn{
@@ -85,5 +85,5 @@
 }
 
 #submit-status {
-    margin-right: 40px;
+    margin-right: 0px;
 }

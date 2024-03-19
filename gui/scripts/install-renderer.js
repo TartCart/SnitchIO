@@ -1,10 +1,18 @@
 // Install button for service
 document.getElementById('install-btn').addEventListener('click', function() {
 
-    document.getElementById('install-status').textContent = 'Installing...';
-    //ipcRenderer.send
+    const installObject = {
+        name: 'install-bool',
+        content: true
+    }
+        document.getElementById('install-status').textContent = 'Installing...';
 
-
+        try {
+            window.electronAPI.sendData(installObject);
+            console.log('install bool sent successfully');
+          } catch (error) {
+            console.error('Error sending install bool:', error);
+          }
 
 });
 
@@ -23,7 +31,7 @@ document.getElementById('submit-btn').addEventListener('click', function() {
     const emailArray = emailList.split(","); 
     const emailObject = {
         name: 'email-array',
-        contents: emailArray
+        content: emailArray
     }
     if (emailList === '')
     {
