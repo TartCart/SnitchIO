@@ -1,0 +1,37 @@
+#enter-instructions
+{
+    margin: 0px;
+}
+
+#email-input-div{
+    margin-top: 10px;
+}
+
+#email-list 
+{
+    width: 300px;
+    height: 25px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+#submit-btn{
+    width: 120px;
+    height: 35px;
+    border: 1px solid #000000;
+    background-color: #777985;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+
+#submit-btn:hover{
+    background-color: #ccc;
+    color: #000000;
+    transition: color .4s ease;
+}

@@ -1,0 +1,1 @@
+New-Service -Name 'SnitchIO' -BinaryPathName 'C:\ProgramData\snitchIO\resources\snitchio.exe' -DisplayName 'SnitchIO' -StartupType 'Automatic' -Description 'snitchIO Service'
