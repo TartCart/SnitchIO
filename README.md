@@ -2,13 +2,13 @@
 *Project is in progress*
 
 ### Recieve email alerts for actions/commands/access under the hood of Windows Server and Workstations 
-* * *
+
 ## Monitoring Capabilities
 - Powershell
 - Command Prompt (Starting services)
 - Remote Desktop Protocol (RDP)
 - Application Installation
-* * *
+
 ##  Back end / Service
 - Windows Service built using VS and C#
 - The service logic monitors event logs and the registry for specfic entrances or changes and reports them via email
