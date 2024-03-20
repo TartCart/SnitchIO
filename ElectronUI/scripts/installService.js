@@ -1,4 +1,4 @@
-async function installService(emailList) {
+async function installService(emailList, callback) {
     const { exec } = require("child_process"); // to run the powershell/cmd scripts/command
     const path = require("path");
     const fs = require("fs-extra");
@@ -7,6 +7,7 @@ async function installService(emailList) {
     const sourceDir = path.join(mainDir, "assets", "service");
     const emailDir = path.join("C:\\ProgramData\\snitchIO\\resources", "alertees.txt");
     const logDir = path.join("C:\\ProgramData\\snitchIO\\logs", "installation.log");
+    const { ipcRenderer } = require('electron');
 
     // reusable function for logging
     await fs.ensureDir(path.dirname(logDir));
@@ -93,11 +94,16 @@ async function installService(emailList) {
             const startMonitoringPath = path.join(__dirname, "startMonitoring.bat");
             executeBatchFile(startMonitoringPath);
         }, 3000); // 3000 milliseconds = 3 seconds
+
+        // reports back to renderer that install is successful
+        callback(null, 'Install Complete');
     } catch (err) {
         console.error("Failed to install service:", err);
         logWithTimestamp(`Failed to install service: ${err}`);
+        callback(err, null);
     }
 
-    // TODO: return to the gui that install was complete
+
+
 }
 module.exports = installService;

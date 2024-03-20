@@ -1,4 +1,4 @@
-async function uninstallService() {
+async function uninstallService(callback) {
 
     const { exec } = require('child_process'); // to run the powershell/cmd scripts/command
     const path = require('path');
@@ -70,14 +70,13 @@ async function uninstallService() {
             executeBatchFile(removeProgramPath);
         }, 3000); // 3000 milliseconds = 3 seconds
 
-        
-
+        // reports back to renderer that uninstall is successful
+        callback(null, 'Uninstall Complete');
 } catch (err) {
     console.error('Failed to uninstall service:', err);
     logWithTimestamp(`Failed to uninstall service: ${err}`);
+    callback(err, null)
   }
 
-
-    // TODO: return to the user that uninstall is complete
 }
 module.exports = uninstallService;

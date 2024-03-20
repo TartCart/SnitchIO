@@ -5,15 +5,20 @@
          <div id="email-input-div">
             <p id="enter-instructions">Enter alert email addresses, previously entered list will be deleted (comma separated)</p>
             <input id="email-list" type="text"  name="email-list" placeholder="example@example.com, another@example.com">
-            <button class="btn" id="submit-btn" type="button" >Submit</button>
-            <div id="submit-status-container">
+            <button id="submit-btn" type="button" >Submit</button>
+            <div  class="click-status" id="submit-status-container">
                 <div id="submit-status"></div>
             </div>
         </div>
+        <div id="install-label">
+            <p>To install or uninstall, the program must be ran as an administrator</p>
+        </div>
         <div id="btn-div">
             <button class="btn" type="button" id="install-btn">Install</button>
-            <span id="install-status"></span>
             <button class="btn" type="button" id="uninstall-btn">Uninstall</button>
+        </div>
+        <div class="click-status" id="installuninstall-status">
+            <span id="install-status"></span>
             <span id="uninstall-status"></span>
         </div>
         <script src="scripts/install-renderer.js"></script>

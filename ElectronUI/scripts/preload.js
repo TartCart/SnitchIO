@@ -6,6 +6,7 @@ const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electronAPI', {
    sendData: (data) => ipcRenderer.send('send-data', data),
-   fetchData: () => ipcRenderer.invoke('fetch-data')
+   fetchData: () => ipcRenderer.invoke('fetch-data'),
+   onOperationStatus: (callback) => ipcRenderer.on('operation-status', (event, ...args) => callback(...args))
  });
  

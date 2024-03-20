@@ -22,9 +22,6 @@
 }
 #submit-btn{
     margin-top: 5px;
-}
-
-.btn {
     width: 120px;
     height: 35px;
     border: 1px solid #000000;
@@ -36,17 +33,55 @@
     font-size: 20px;
 }
 
-#uninstall-btn:hover, 
-#submit-btn:hover, 
-#install-btn:hover{
+#btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+}
+
+#installuninstall-status{
+    text-align: center;
+}
+
+
+#install-label {
+ text-align: center;
+}
+
+#install-btn{
+    margin-right: 20px;
+}
+
+#uninstall-btn{
+    margin-left: 20px;
+}
+
+
+.btn {
+    width: 120px;
+    height: 50px;
+    border: 1px solid #000000;
+    background-color: #777985;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.click-status {
+    display: flex;
+    flex-direction: column; 
+    height: 10vh; 
+}
+
+
+
+#submit-btn:hover,
+.btn:hover{
     background-color: #ccc;
     color: #000000;
     transition: color .4s ease;
 }
 
-
-#submit-status-container {
-    display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    height: 10vh; /* Adjust based on your layout needs */
-}

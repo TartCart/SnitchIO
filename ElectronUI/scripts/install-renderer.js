@@ -1,7 +1,44 @@
+
+// fade out button click status'
+function fadeOutText(id) {
+    setTimeout(function () {
+        document.getElementById(id).textContent = '';
+    }, 4000);
+}
+
+// delay execution
+function delayExecution(callback, delay) {
+  setTimeout(callback, delay);
+}
+
+//  update status with a delay for readability
+function updateStatusWithDelay(elementId, status) {
+  delayExecution(() => {
+      const element = document.getElementById(elementId);
+      element.textContent = status;
+      element.style.color = "#56B847";
+      fadeOutText(elementId);
+  }, 3000); // Delay of 3 seconds
+}
+
+// handle install or uninstall status reporting
+function handleStatusReporting(type, status) {
+  const elementId = type === 'install' ? 'install-status' : 'uninstall-status';
+  updateStatusWithDelay(elementId, status);
+}
+
+// Listen for operation status updates
+electronAPI.onOperationStatus(({type, status}) => {
+  handleStatusReporting(type, status);
+});
+
+
+
 // Install button for service
 document.getElementById('install-btn').addEventListener('click', function() {
 
     document.getElementById('install-status').textContent = 'Installing...';
+    fadeOutText('install-status');
 
     const installObject = {
         name: 'install-bool',
@@ -21,6 +58,7 @@ document.getElementById('install-btn').addEventListener('click', function() {
 document.getElementById('uninstall-btn').addEventListener('click', function() {
 
     document.getElementById('uninstall-status').textContent = 'uninstalling...';
+    fadeOutText('uninstall-status')
 
     const uninstallObject = {
         name: 'uninstall-bool',
@@ -51,16 +89,11 @@ document.getElementById('submit-btn').addEventListener('click', function() {
         document.getElementById('submit-status').textContent = 'Enter an email address..';
         
         // fade out the error notification
-        setTimeout(function() {
-            document.getElementById('submit-status').textContent = '';
-        }, 2000)
-        return;
+        fadeOutText('submit-status');
     } else {
         document.getElementById('submit-status').textContent = 'Recieved';
-            // fade out the received confirmation
-        setTimeout(function() {
-            document.getElementById('submit-status').textContent = '';
-        }, 2000)
+        // fade out the received confirmation
+        fadeOutText('submit-status');
 
         try {
             window.electronAPI.sendData(emailObject);
@@ -70,3 +103,7 @@ document.getElementById('submit-btn').addEventListener('click', function() {
           }
     }
 });
+
+
+
+
