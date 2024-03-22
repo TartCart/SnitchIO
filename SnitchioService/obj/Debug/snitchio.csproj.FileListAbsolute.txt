@@ -1,0 +1,7 @@
+C:\Users\clson\projects\wt\WatchTowerService\bin\Debug\snitchio.exe.config
+C:\Users\clson\projects\wt\WatchTowerService\bin\Debug\snitchio.exe
+C:\Users\clson\projects\wt\WatchTowerService\bin\Debug\snitchio.pdb
+C:\Users\clson\projects\wt\WatchTowerService\obj\Debug\snitchio.csproj.AssemblyReference.cache
+C:\Users\clson\projects\wt\WatchTowerService\obj\Debug\snitchio.csproj.CoreCompileInputs.cache
+C:\Users\clson\projects\wt\WatchTowerService\obj\Debug\snitchio.exe
+C:\Users\clson\projects\wt\WatchTowerService\obj\Debug\snitchio.pdb

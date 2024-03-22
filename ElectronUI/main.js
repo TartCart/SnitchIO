@@ -49,6 +49,6 @@ ipcMain.on('send-data', (event, data) => {
 app.whenReady().then(() => {
   createWindow();
   // Below removes default head bar/dev tools if uncommented
-  // Menu.setApplicationMenu(null);
+   Menu.setApplicationMenu(null);
 
 });

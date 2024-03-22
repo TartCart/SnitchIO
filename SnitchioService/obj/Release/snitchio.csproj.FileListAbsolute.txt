@@ -1,0 +1,11 @@
+C:\Users\clson\projects\wt\WatchTowerService\bin\Release\snitchio.exe.config
+C:\Users\clson\projects\wt\WatchTowerService\bin\Release\snitchio.exe
+C:\Users\clson\projects\wt\WatchTowerService\bin\Release\snitchio.pdb
+C:\Users\clson\projects\wt\WatchTowerService\obj\Release\snitchio.csproj.AssemblyReference.cache
+C:\Users\clson\projects\wt\WatchTowerService\obj\Release\snitchio.csproj.CoreCompileInputs.cache
+C:\Users\clson\projects\wt\WatchTowerService\obj\Release\snitchio.exe
+C:\Users\clson\projects\wt\WatchTowerService\obj\Release\snitchio.pdb
+C:\Users\clson\projects\wt\WatchTowerService\bin\Release\snitchio.exe.manifest
+C:\Users\clson\projects\wt\WatchTowerService\bin\Release\snitchio.application
+C:\Users\clson\projects\wt\WatchTowerService\obj\Release\snitchio.exe.manifest
+C:\Users\clson\projects\wt\WatchTowerService\obj\Release\snitchio.application

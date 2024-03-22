@@ -1,0 +1,269 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|c:\\users\\clson\\projects\\wt\\watchtowerservice\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|c:\\users\\clson\\projects\\wt\\watchtowerservice\\psmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:psmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|c:\\users\\clson\\projects\\wt\\watchtowerservice\\installedapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:installedapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|c:\\users\\clson\\projects\\wt\\watchtowerservice\\rdpmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:rdpmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\psmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:psmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\installedapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:installedapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\rdpmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:rdpmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|c:\\users\\clson\\projects\\wt\\watchtowerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\service1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:service1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|C:\\Users\\clson\\projects\\wt\\WatchTowerService\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|WatchTower.csproj|solutionrelative:service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 169,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PSMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\PSMonitor.cs",
+              "RelativeDocumentMoniker": "PSMonitor.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\PSMonitor.cs",
+              "RelativeToolTip": "PSMonitor.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAnwGAAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T17:49:19.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "installedApps.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\installedApps.cs",
+              "RelativeDocumentMoniker": "installedApps.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\installedApps.cs",
+              "RelativeToolTip": "installedApps.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGcAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T17:12:59.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RDPMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\RDPMonitor.cs",
+              "RelativeDocumentMoniker": "RDPMonitor.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\RDPMonitor.cs",
+              "RelativeToolTip": "RDPMonitor.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAEwEsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T17:12:09.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\EmailSender.cs",
+              "RelativeDocumentMoniker": "EmailSender.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\EmailSender.cs",
+              "RelativeToolTip": "EmailSender.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAD4vwoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T16:47:51.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Service1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Service1.Designer.cs",
+              "RelativeDocumentMoniker": "Service1.Designer.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Service1.Designer.cs",
+              "RelativeToolTip": "Service1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:51:44.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CMDMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\CMDMonitor.cs",
+              "RelativeDocumentMoniker": "CMDMonitor.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\CMDMonitor.cs",
+              "RelativeToolTip": "CMDMonitor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:49:25.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Service1.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Service1.cs",
+              "RelativeDocumentMoniker": "Service1.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Service1.cs",
+              "RelativeToolTip": "Service1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:49:25.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PSMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\PSMonitor.cs",
+              "RelativeDocumentMoniker": "PSMonitor.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\PSMonitor.cs",
+              "RelativeToolTip": "PSMonitor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T21:40:27.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RDPMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\RDPMonitor.cs",
+              "RelativeDocumentMoniker": "RDPMonitor.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\RDPMonitor.cs",
+              "RelativeToolTip": "RDPMonitor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T21:39:38.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "installedApps.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\installedApps.cs",
+              "RelativeDocumentMoniker": "installedApps.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\installedApps.cs",
+              "RelativeToolTip": "installedApps.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T21:36:37.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Service1.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Service1.cs",
+              "RelativeDocumentMoniker": "Service1.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Service1.cs",
+              "RelativeToolTip": "Service1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T21:41:51.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\EmailSender.cs",
+              "RelativeDocumentMoniker": "EmailSender.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\EmailSender.cs",
+              "RelativeToolTip": "EmailSender.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T21:34:28.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T21:33:12.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CMDMonitor.cs",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\CMDMonitor.cs",
+              "RelativeDocumentMoniker": "CMDMonitor.cs",
+              "ToolTip": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\CMDMonitor.cs",
+              "RelativeToolTip": "CMDMonitor.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAuwDcAAAB7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T21:39:13.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Service1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\clson\\projects\\wt\\WatchTowerService\\Service1.cs",
+              "RelativeDocumentMoniker": "Service1.cs",
+              "ToolTip": "C:\\Users\\clson\\git_project\\WatchTower\\Service1.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\git_project\\WatchTower\\Service1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T21:33:04.084Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
