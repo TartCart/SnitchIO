@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
     <div>
-        <h1>Monitor: work in progress</h1>
+        <p>Number of PowerShell alerts generated: <span id="powershell-alerts-count">0</span></p>
+        <p>Number of installed apps alerts generated: <span id="installed-apps-alerts-count">0</span></p>
+        <p>Number of CMDs alerts generated: <span id="cmds-alerts-count">0</span></p>
+        <p>Number of RDPs alerts generated: <span id="rdps-alerts-count">0</span></p>
+        <p>Total alerts generated: <span id="total-alerts-count">0</span></p>
+        <canvas id="alertsChart" width="100" height="30"></canvas>
+        <script src="scripts/monitor-renderer.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </div>
 </html>
 

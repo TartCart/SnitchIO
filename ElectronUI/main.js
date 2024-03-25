@@ -1,8 +1,10 @@
 const { app, BrowserWindow, ipcMain, Menu } = require('electron')
 const path = require('path')
+const fs = require('fs');
 const installService = require('./scripts/installService.js');
 const uninstallService = require('./scripts/uninstallService.js');
 const updateEmail = require('./scripts/updateEmail.js');
+const monitorLogFilePath = 'C:/ProgramData/snitchIO/logs/Service.log';
 let emailList = [];
 let mainWindow;
 
@@ -44,6 +46,18 @@ ipcMain.on('send-data', (event, data) => {
       });
   }
 })
+
+// recieve log file for the monitor tab to count events
+ipcMain.on('request-log-data', (event) => {
+  fs.readFile(monitorLogFilePath, 'utf8', (err, data) => {
+      if (err) {
+          console.error('Error reading log file:', err);
+          event.reply('log-data', { error: err.message });
+          return;
+      }
+      event.reply('log-data', { data: data });
+  });
+});
 
 // generate main window
 app.whenReady().then(() => {

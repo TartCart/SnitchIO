@@ -20,7 +20,7 @@
 - The gui is built with Electron, thus the included langauges are JavaScript, HTML, CSS and some Powershell scripts / batch files
 - It takes in the user email(s), creates a directory in *ProgramData* for configuration and log files, installs or uninstalls the service and can update some of the config files accessed by the service 
 - It also runs the included Powershell / batch files to enable the logging capabilities
-- Later on will be looking to implement a monitor feature
+- Includes monitoring showing statistics graphically of generated alerts
 
 ## Requirements 
 - Windows Server 2012 R2 and greater
