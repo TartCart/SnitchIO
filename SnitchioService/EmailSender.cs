@@ -10,15 +10,18 @@ using System.Xml.Linq;
 using System.Linq;
 
 
-// The email sender takes in and retains the alert according to the 10 minute timer
-// once the time elapses the emails are sent either as singular if one or many
-// this prevents end-user inbox overload in case many alerts are generated at once
+/* The email sender takes in and retains the alert according to the timer,
+ * once the timer elapses the emails are sent either as singular if one or many if many..
+ * this prevents end-user inbox overload in case many alerts are generated at once
+ * checks the exclusion list and removes the alert if it contains any of the exclusions */
+
 public class EmailSender
 {
     private static List<string> alertMessages = new List<string>();
     private static Timer alertTimer;
     private static readonly object lockObject = new object();
     private static String  singleSubject;
+    private static List<string> exclusions = new List<string>();
 
     public EmailSender()
     {
@@ -30,14 +33,48 @@ public class EmailSender
         alertTimer.Enabled = true;
     }
 
+    // load and create exclusion list
+    private static void LoadExclusions()
+    {
+        string exclusionsPath = "C:\\ProgramData\\snitchIO\\resources\\exclusions.txt";
+        if (File.Exists(exclusionsPath))
+        {
+            string exclusionsContent = File.ReadAllText(exclusionsPath);
+            exclusions = exclusionsContent.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                                          .Select(exclusion => exclusion.Trim())
+                                          .ToList();
+        }
+        else
+        {
+            Program.LogMessage("Exclusions file does not exist.");
+        }
+    }
+
     public void QueueAlert(string subject, string body)
     {
         
         lock (lockObject)
         {
-            // Add the alert body to the list of messages
-            alertMessages.Add(body);
-            singleSubject = subject;
+            // Add the alert body to the list of messages if it does not contain any exclusions
+            if (!ContainsExclusions(body))
+            {
+                LoadExclusions();
+                alertMessages.Add(body);
+                singleSubject = subject;
+            }
+        }
+    }
+
+    // Check exclusion 
+    private bool ContainsExclusions(string message)
+    {
+        bool excluded = exclusions.Any(exclusion => message.Contains(exclusion));
+        if (excluded)
+        {
+            Program.LogMessage("Exclusion matched, skipping email generation.");
+            return excluded;
+        } else {
+            return excluded;
         }
     }
 

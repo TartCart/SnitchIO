@@ -16,6 +16,7 @@ window.electronAPI.receiveLogData((data) => {
     const installedAppsAlertsCount = (logData.match(/New Software Detected/gi) || []).length;
     const cmdsAlertsCount = (logData.match(/CMD.EXE Command Detected/gi) || []).length;
     const rdpsAlertsCount = (logData.match(/RDP Connection Detected/gi) || []).length;
+    const exclusionAlertsCount = (logData.match(/Exclusion matched/gi) || []).length;
     const totalAlertsCount = powershellAlertsCount + installedAppsAlertsCount + cmdsAlertsCount + rdpsAlertsCount;
 
     // Update the HTML with the counts
@@ -24,6 +25,7 @@ window.electronAPI.receiveLogData((data) => {
     document.getElementById('cmds-alerts-count').textContent = cmdsAlertsCount;
     document.getElementById('rdps-alerts-count').textContent = rdpsAlertsCount;
     document.getElementById('total-alerts-count').textContent = totalAlertsCount;
+    document.getElementById('excluded-alerts-count').textContent = exclusionAlertsCount;
 
     const alertsByDay = {};
 

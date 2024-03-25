@@ -102,7 +102,7 @@ public class InstalledApps
 
 
                             // Send email 
-                            Program.LogMessage($"New Software Detected: Sending Alert email.{appName}{key}{appKey} app");
+                            Program.LogMessage($"New Software Detected: Sending Alert email.");
                             emailSender.QueueAlert("Installed Software Event", emailBody);
 
                             // Mark the app as notified aka ensure it doesnt alert on the same app
