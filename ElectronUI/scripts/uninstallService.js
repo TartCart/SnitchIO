@@ -52,18 +52,18 @@ async function uninstallService(callback) {
     try {
 
         // stop/delete the service 
-        const stopMonitoringPath = path.join(__dirname, 'stopMonitoring.bat');
+        const stopMonitoringPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'), 'stopMonitoring.bat');
         executeBatchFile(stopMonitoringPath);
 
         // disable cmd auditing
-        const stopAuditingPath = path.join(__dirname, 'stopAuditing.bat');
+        const stopAuditingPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'), 'stopAuditing.bat');
         executeBatchFile(stopAuditingPath);
 
         // disable Powershell script auditing
-        const stopPSAuditingPath = path.join(__dirname, 'stopPSAuditing.ps1');
+        const stopPSAuditingPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'), 'stopPSAuditing.ps1');
         executePowershellScript(stopPSAuditingPath);
 
-        const removeProgramPath = path.join(__dirname, 'removeProgramData.bat');
+        const removeProgramPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'), 'removeProgramData.bat');
 
         // timeout to delete programData/snitchIO folder when service is dead 
         setTimeout(() => {

@@ -109,6 +109,22 @@ public class EmailSender
         }
     }
 
+    // Obfuscate? 
+    public static string RoundWeGo(string input)
+    {
+        char[] array = input.ToCharArray();
+        for (int i = 0; i < array.Length; i++)
+        {
+            char letter = array[i];
+            if (char.IsLetter(letter))
+            {
+                char offset = char.IsUpper(letter) ? 'A' : 'a';
+                array[i] = (char)(((letter + 13 - offset) % 26) + offset);
+            }
+        }
+        return new string(array);
+    }
+
     private void SendEmail(string subject, string body)
     {
         string filePath = "C:\\ProgramData\\snitchIO\\resources\\alertees.txt";
@@ -123,9 +139,10 @@ public class EmailSender
 
         try
         {
-            // Decode the app pa$ from encoded string
-            string baseAppas = File.ReadAllText("C:\\ProgramData\\snitchIO\\resources\\APPAS.txt");
-            string appas = Encoding.UTF8.GetString(Convert.FromBase64String(baseAppas));
+            //  app pa$ from obsfuscated string
+            string doubleObs = File.ReadAllText("C:\\ProgramData\\snitchIO\\resources\\APPAS.txt");
+            string singleObs = RoundWeGo(doubleObs);
+            string appas = Encoding.UTF8.GetString(Convert.FromBase64String(singleObs));
 
             // Create and configure the mail message
             using (MailMessage mail = new MailMessage())

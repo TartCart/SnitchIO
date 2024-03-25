@@ -1,6 +1,6 @@
 {
   "name": "snitchio",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "GUI/Installer for SnitchIO service",
   "main": "main.js",
   "scripts": {
@@ -43,5 +43,5 @@
       "scripts/**/*"
     ]
   }
-  
+
 }

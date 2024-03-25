@@ -77,21 +77,21 @@ async function installService(emailList, callback) {
         /////// chaning OS settings to allow for greater logging ////////////////
 
         // ps script for enabling script logging in registry
-        const regeditScriptPath = path.join(__dirname, "regAdd.ps1");
+        const regeditScriptPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'), "regAdd.ps1");
         executePowershellScript(regeditScriptPath);
 
         // ps script for installing the service
-        const installServiceScriptPath = path.join(__dirname, "createService.ps1");
+        const installServiceScriptPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'), "createService.ps1");
         executePowershellScript(installServiceScriptPath);
 
         // cmd bat script for starting cmd auditing/logging
-        const startCMDAuditingPath = path.join(__dirname, "startAuditing.bat");
+        const startCMDAuditingPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'), "startAuditing.bat");
         executeBatchFile(startCMDAuditingPath);
 
         // setting timeout so the service has time to be instantiated before the start .bat runs
         setTimeout(() => {
             // cmd bat script for starting service
-            const startMonitoringPath = path.join(__dirname, "startMonitoring.bat");
+            const startMonitoringPath = path.join(__dirname.replace('app.asar', 'app.asar.unpacked'), "startMonitoring.bat");
             executeBatchFile(startMonitoringPath);
         }, 3000); // 3000 milliseconds = 3 seconds
 

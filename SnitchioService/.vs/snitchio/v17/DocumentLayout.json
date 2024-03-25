@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\clson\\projects\\wt\\SnitchioService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|C:\\Users\\clson\\projects\\wt\\SnitchioService\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|c:\\users\\clson\\projects\\wt\\snitchioservice\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:installedapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|c:\\users\\clson\\projects\\wt\\snitchioservice\\cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|C:\\Users\\clson\\projects\\wt\\SnitchioService\\cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B61B37-59BB-46B7-BF0A-A6B0327D9D19}|snitchio.csproj|solutionrelative:cmdmonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -96,7 +96,7 @@
               "RelativeDocumentMoniker": "EmailSender.cs",
               "ToolTip": "C:\\Users\\clson\\projects\\wt\\SnitchioService\\EmailSender.cs",
               "RelativeToolTip": "EmailSender.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAAwEkAAABNAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T16:47:51.984Z",
               "EditorCaption": ""
@@ -111,8 +111,7 @@
               "RelativeToolTip": "CMDMonitor.cs",
               "ViewState": "AQIAAEQAAAAAAAAAAAAAwG0AAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:49:25.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T15:49:25.138Z"
             },
             {
               "$type": "Document",
@@ -160,8 +159,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAgwFIAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T21:33:12.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-07T21:33:12.429Z"
             },
             {
               "$type": "Document",
@@ -185,8 +183,7 @@
               "RelativeToolTip": "installedApps.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T17:12:59.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T17:12:59.435Z"
             },
             {
               "$type": "Document",
