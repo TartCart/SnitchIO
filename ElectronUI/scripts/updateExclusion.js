@@ -1,11 +1,12 @@
-async function updateEmail(emailList) {
+async function updateExclusion(exclusionList) {
 
     const path = require('path');
     const fs = require('fs-extra');
     const logDir = path.join('C:\\ProgramData\\snitchIO\\logs', 'installation.log');
-    const emailDir = path.join('C:\\ProgramData\\snitchIO\\resources', 'alertees.txt');
+    const exclusionDir = path.join('C:\\ProgramData\\snitchIO\\resources', 'exclusions.txt');
     // Ensure the logs directory exists
     await fs.ensureDir(path.dirname(logDir));
+    await fs.ensureDir(path.dirname(exclusionDir));
 
     // Ensure the logs directory exists and create helper function so i dont have to write a whole line during each log
     const logWithTimestamp = (message) => {
@@ -15,17 +16,17 @@ async function updateEmail(emailList) {
     };
 
     try {
-        const dataString = emailList.join(',');
-        fs.writeFile(emailDir, dataString, (err) => {
+        const dataString = exclusionList.join(',');
+        fs.writeFile(exclusionDir, dataString, (err) => {
         if (err) {
-            logWithTimestamp(`Error writing email file: ${err}`);
+            logWithTimestamp(`Error writing exclusion file: ${err}`);
         } else {
-            logWithTimestamp('Email file was written successfully');
+            logWithTimestamp('exclusion file was written successfully');
         }
         });
     } catch (err) {
-        logWithTimestamp(`Failed to update email: ${err}`);
+        logWithTimestamp(`Failed to update exclusion list: ${err}`);
     }
 
 }
-module.exports = updateEmail;
+module.exports = updateExclusion;

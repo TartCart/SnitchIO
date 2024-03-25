@@ -4,8 +4,10 @@ const fs = require('fs');
 const installService = require('./scripts/installService.js');
 const uninstallService = require('./scripts/uninstallService.js');
 const updateEmail = require('./scripts/updateEmail.js');
+const updateExclusion = require('./scripts/updateExclusion.js')
 const monitorLogFilePath = 'C:/ProgramData/snitchIO/logs/Service.log';
 let emailList = [];
+let exclusionList =[];
 let mainWindow;
 
 // declaring main window
@@ -44,6 +46,10 @@ ipcMain.on('send-data', (event, data) => {
           // send the report back to install renderer
           mainWindow.webContents.send('operation-status', {type: 'uninstall', status: err ? 'Failed' : status});
       });
+  } else if (data.name === 'exclusion-array')
+  {
+    exclusionList = data.content;
+    updateExclusion(exclusionList);
   }
 })
 

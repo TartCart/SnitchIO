@@ -40,8 +40,7 @@ document.getElementById('exclusions-submit-btn').addEventListener('click', funct
     const exclusionArray = exclusionList.split(","); 
     const exclusionObject = {
         name: 'exclusion-array',
-        content: exclusionArray,
-        update: true
+        content: exclusionArray
     }
     if (exclusionList === '')
     {
