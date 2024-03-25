@@ -5,8 +5,25 @@
     <div id="email-input-div">
             <p id="enter-instructions">Change alert email addresses, previously entered list will be deleted (comma separated)</p>
             <input id="email-list" type="text"  name="email-list" placeholder="example@example.com, another@example.com">
-            <button id="submit-btn" type="button" >Submit</button>
-        <div id="submit-status"></div>
+            <button class="submit-btn" id="email-submit-btn" type="button" >Submit</button>
+        <div class="click-status" id="submit-status"></div>
+    </div>
+    <div id="exclusions-input-div">
+        <p id="exclusions-instructions">Enter a new exclusions list below, this will delete the previous list.
+            It is recommended to keep a text file of your exclusions for any configuration changes. 
+            <br> <br>
+            Example: <br>
+            Alert 1: "This is an example of an alert from cmd.exe launching Asus controller" <br>
+            Alert 2: "This is another exmplae of an alert from cmd.exe executing Asus controller.exe" <br>
+            <br>
+            Setting an exclusion of "launching Asus Controller" will prevent alert 1 from generating but not alert 2. <br> 
+            Setting an exclusion of "Asus Controller" will prevent both alerts from generating.<br><br>
+            <i>WARNING: This will prevent SnitchIO from generating alerts that contain these exclusion keywords, anywhere in the alert, exclusively.
+            Alerts are case sensitive. </i>
+        </p>
+        <input id="exclusions-list" type="text" name="exclusions-list" placeholder="Exclusion1, exclusion1, exlusion 1 and 2 are different">
+        <button class="submit-btn" id="exclusions-submit-btn" type="button">Submit</button>
+        <div class="click-status" id="exclusion-submit-status"></div>
     </div>
 <script src="scripts/configure-renderer.js"></script>
 </body>
