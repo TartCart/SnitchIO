@@ -28,8 +28,4 @@
 
 - Windows Server 2012 R2 and greater
 - windows 8.1/RT 8.1 and greater
--
-### Monitoring tab of the gui
--
-- ![Screenshot 2024-03-25 170530](https://github.com/TartCart/SnitchIO/assets/67134507/c73c26af-d4de-4bd7-b0af-481b0a9b5375)
 
